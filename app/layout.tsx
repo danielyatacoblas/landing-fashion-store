@@ -8,7 +8,7 @@ const text = Hanken_Grotesk({ subsets: ['latin'], variable: '--font-text', displ
 export const metadata: Metadata = {
   metadataBase: new URL('https://landing-fashion-store-danielyatacoblas-projects.vercel.app'),
   title: 'QAYTU — Alpaca teñida con plantas de los Andes',
-  description: 'Prendas de alpaca teñidas con cochinilla, qolle y chilca, tejidas a mano y rastreables hasta quien las hizo. Demo de portafolio de Daniel Yataco.',
+  description: 'Prendas de alpaca teñidas con cochinilla, qolle y chilca, tejidas a mano y rastreables hasta quien las hizo. Diseño demo de Daniel Yataco · WhatsApp 975 118 790.',
   openGraph: {
     title: 'QAYTU — Alpaca teñida con plantas de los Andes',
     description: 'Elige el tinte y conoce de dónde viene tu prenda.',
