@@ -82,7 +82,11 @@ Sin estas variables la tienda funciona igual: el formulario confirma en local.
 ## Créditos
 
 - Fotografía: [Pexels](https://www.pexels.com) (licencia libre de uso comercial).
-- Marca, prendas, precios y comunidades asignadas son **ficticios**, creados para portafolio. El pago está desactivado.
+- Marca, prendas, precios y comunidades asignadas son **ficticios**, de ejemplo: es un diseño demo. El pago está desactivado.
+
+## Contacto
+
+¿Quieres una web así para tu negocio? Escríbeme por WhatsApp al **[975 118 790](https://wa.me/51975118790)**.
 
 ---
 
