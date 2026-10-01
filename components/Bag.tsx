@@ -20,16 +20,14 @@ export default function Bag({ lines, open, onClose, onQty }: {
     panel.current?.focus();
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
-    document.documentElement.style.overflow = 'hidden';
     return () => {
       window.removeEventListener('keydown', onKey);
-      document.documentElement.style.overflow = '';
       prev?.focus();
     };
   }, [open, onClose]);
 
   return (
-    <div className="bag" data-open={open ? '' : undefined} aria-hidden={!open} inert={!open}>
+    <div className="bag" data-open={open ? '' : undefined} data-modal-open={open ? '' : undefined} aria-hidden={!open} inert={!open}>
       <button type="button" className="bag__scrim" aria-label="Cerrar bolsa" onClick={onClose} tabIndex={-1} />
       <div className="bag__panel" role="dialog" aria-modal="true" aria-labelledby="bag-title" tabIndex={-1} ref={panel}>
         <div className="bag__top">
@@ -43,7 +41,7 @@ export default function Bag({ lines, open, onClose, onQty }: {
             <a href="#coleccion" onClick={onClose} className="btn btn--ink">Ver la colección</a>
           </div>
         ) : (
-          <ul className="bag__lines">
+          <ul className="bag__lines" data-lenis-prevent>
             {lines.map((l, i) => (
               <li key={`${l.sku}-${l.size}`} className="line">
                 <div className="line__img"><Image src={l.img} alt="" fill sizes="80px" quality={70} /></div>
@@ -66,7 +64,7 @@ export default function Bag({ lines, open, onClose, onQty }: {
           <div className="bag__row"><span>Envío</span><span className="tnum">{shipping ? `S/ ${shipping}` : 'Gratis'}</span></div>
           <div className="bag__row bag__row--total"><span>Total</span><span className="tnum">S/ {(total + shipping).toLocaleString('es-PE')}</span></div>
           <button type="button" className="btn btn--ink btn--block" disabled aria-describedby="bag-note">Pagar</button>
-          <p id="bag-note" className="bag__note">Pago desactivado: esta tienda es una demo de portafolio.</p>
+          <p id="bag-note" className="bag__note">Pago desactivado: esta es una tienda demo.</p>
         </div>
       </div>
     </div>
