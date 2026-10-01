@@ -1,3 +1,5 @@
+import { waLink } from '@/lib/contact';
+
 export default function Footer() {
   return (
     <footer className="ft">
@@ -21,8 +23,8 @@ export default function Footer() {
       </div>
       <p className="ft__word" aria-hidden="true">QAYTU</p>
       <div className="ft__legal">
-        <span>Marca ficticia creada para portafolio. Precios y piezas de demostración, sin venta real.</span>
-        <a className="badge" href="https://github.com/danielyatacoblas" rel="noopener">Diseñado y desarrollado por Daniel Yataco</a>
+        <span>Diseño demo: la marca, las piezas y los precios son ficticios. ¿Quieres una tienda así para tu marca?</span>
+        <a className="badge" href={waLink('QAYTU (tienda de moda)')} target="_blank" rel="noopener">Diseño y desarrollo: Daniel Yataco · WhatsApp <span className="nowrap">975 118 790</span></a>
       </div>
     </footer>
   );

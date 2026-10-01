@@ -1,7 +1,7 @@
 'use client';
 import { useCallback, useEffect, useState } from 'react';
-import Lenis from 'lenis';
-import { gsap, ScrollTrigger, reduced } from '@/lib/motion';
+import { startSmoothScroll } from '@/lib/smooth';
+import DemoCta from './DemoCta';
 import { sb } from '@/lib/supabase';
 import Header from './Header';
 import Hero from './Hero';
@@ -21,15 +21,7 @@ export default function Store() {
   const [toast, setToast] = useState('');
 
   // Lenis + ScrollTrigger comparten el mismo reloj para que el scroll suave no desincronice los pins.
-  useEffect(() => {
-    if (reduced()) return;
-    const lenis = new Lenis({ duration: 1.1, easing: (t) => 1 - Math.pow(1 - t, 4) });
-    lenis.on('scroll', ScrollTrigger.update);
-    const tick = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
-    return () => { gsap.ticker.remove(tick); lenis.destroy(); };
-  }, []);
+  useEffect(() => startSmoothScroll(1.1), []);
 
   useEffect(() => {
     try { setBag(JSON.parse(localStorage.getItem(BAG_KEY) || '[]')); } catch {}
@@ -69,6 +61,7 @@ export default function Store() {
         <Drop />
       </main>
       <Footer />
+      <DemoCta site="QAYTU (tienda de moda)" />
       <Bag
         lines={bag}
         open={open}
