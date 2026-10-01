@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-delegated: Vite + React + TypeScript, static build deployed on Vercel (Hobby). Supabase (Postgres + REST, anon key with RLS insert-only policies) stores A/B hero impressions/conversions and newsletter/contact leads. Chosen because the owner targets front-end and full-stack recruiters, who read React fluently, and the page must stay a fast static deploy.
+delegated: Next.js 16 (App Router) + React 19 + TypeScript, GSAP + Lenis for motion, static prerender deployed on Vercel (Hobby). Supabase (Postgres + REST, anon key with RLS insert-only policies) stores A/B hero impressions/conversions and newsletter/contact leads. Chosen because the owner targets front-end and full-stack recruiters, who read React fluently, and the page must stay a fast static deploy.
 
 ## Users
 
@@ -28,7 +28,7 @@ Visitors arrive mostly on mobile from social links. Recruiters open it on deskto
 
 ## Capabilities and Constraints
 
-Working: catalog with filters, product detail with size guide, bag drawer with totals, drop-list form, A/B hero test persisted in Supabase, author badge linking to the portfolio. Checkout is intentionally disabled (demo). No image generation available: imagery is authored in code (SVG/CSS) or sourced from verified free photography. Spanish copy.
+Working: catalog with filters, product detail with size guide, bag drawer with totals, drop-list form, A/B hero test persisted in Supabase, author badge linking to the portfolio. Checkout is intentionally disabled (demo). Imagery is real photography from Pexels (free commercial license), optimized to max 1800px in public/img. Spanish copy.
 
 ## Brand Commitments
 
